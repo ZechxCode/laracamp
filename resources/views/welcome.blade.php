@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!doctype html>
 <html lang="en">
 
@@ -20,42 +23,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="{{ asset('images/logo.png') }}" alt="">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Program</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Mentor</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Business</a>
-                    </li>
-                </ul>
-                <div class="d-flex">
-                    <a href="#" class="btn btn-master btn-secondary me-3">
-                        Sign In
-                    </a>
-                    <a href="#" class="btn btn-master btn-primary">
-                        Sign Up
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+
 
     <section class="banner">
         <div class="container">
@@ -189,7 +157,8 @@
                         Finish The Project
                     </h2>
                     <p class="support">
-                        Each of you will be joining the private group and also <br> working together with team members
+                        Each of you will be joining the private group and also <br> working together with team
+                        members
                         on project
                     </p>
                     <p class="mt-5">
@@ -215,7 +184,8 @@
                         Big Demo Day
                     </h2>
                     <p class="support">
-                        Learn how to speaking in public to demonstrate your <br> final project and receive the important
+                        Learn how to speaking in public to demonstrate your <br> final project and receive the
+                        important
                         feedbacks
                     </p>
                     <p class="mt-5">
@@ -239,7 +209,8 @@
                         Start Your Journey
                     </h2>
                     <p class="support">
-                        Learn how to speaking in public to demonstrate your <br> final project and receive the important
+                        Learn how to speaking in public to demonstrate your <br> final project and receive the
+                        important
                         feedbacks
                     </p>
                     <p class="mt-5">
@@ -322,7 +293,7 @@
                                     <div class="clear"></div>
                                 </div>
                                 <p>
-                                    <a href="#" class="btn btn-master btn-primary w-100 mt-3">
+                                    <a href="{{ route('checkout') }}" class="btn btn-master btn-primary w-100 mt-3">
                                         Take This Plan
                                     </a>
                                 </p>
@@ -368,7 +339,7 @@
                                     <div class="clear"></div>
                                 </div>
                                 <p>
-                                    <a href="#" class="btn btn-master btn-secondary w-100 mt-3">
+                                    <a href="{{ route('checkout') }}" class="btn btn-master btn-secondary w-100 mt-3">
                                         Start With This Plan
                                     </a>
                                 </p>
@@ -404,7 +375,8 @@
                             <div class="item-review">
                                 <img src="{{ asset('images/stars.svg') }}" alt="">
                                 <p class="message">
-                                    I was not really into code but after they teach me how to train my logic then I was
+                                    I was not really into code but after they teach me how to train my logic then I
+                                    was
                                     really fall in love with code
                                 </p>
                                 <div class="user">
@@ -443,7 +415,8 @@
                             <div class="item-review">
                                 <img src="{{ asset('images/stars.svg') }}" alt="">
                                 <p class="message">
-                                    My background is design and art but I do really love how to make my design working
+                                    My background is design and art but I do really love how to make my design
+                                    working
                                     in the development phase
                                 </p>
                                 <div class="user">
@@ -482,3 +455,5 @@
 </body>
 
 </html>
+
+@endsection
