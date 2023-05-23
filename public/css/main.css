@@ -2,6 +2,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.text-logg{
+  color : #6610f2;
+}
+
 .pl-150 {
   padding-left: 150px;
 }
