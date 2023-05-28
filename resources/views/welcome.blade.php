@@ -268,12 +268,20 @@
                                     </p>
                                     <div class="clear"></div>
                                 </div>
-                                <p>
-                                    <a href="{{ route('checkout.create', 'gila-belajar') }}"
-                                        class="mt-3 btn btn-master btn-primary w-100">
-                                        Take This Plan
-                                    </a>
-                                </p>
+                                @if (Auth::check())
+                                    <p>
+                                        <a href="{{ route('checkout.create', 'gila-belajar') }}"
+                                            class="mt-3 btn btn-master btn-primary w-100">
+                                            Take This Plan
+                                        </a>
+                                    </p>
+                                @else
+                                    <p>
+                                        <a href="{{ route('login') }}" class="mt-3 btn btn-master btn-primary w-100">
+                                            Take This Plan
+                                        </a>
+                                    </p>
+                                @endif
                             </div>
                         </div>
                         <div class="col-lg-6 col-12">
@@ -315,12 +323,21 @@
                                     </p>
                                     <div class="clear"></div>
                                 </div>
-                                <p>
-                                    <a href="{{ route('checkout.create', 'baru-mulai') }}"
-                                        class="mt-3 btn btn-master btn-secondary w-100">
-                                        Start With This Plan
-                                    </a>
-                                </p>
+                                @auth
+                                    <p>
+                                        <a href="{{ route('checkout.create', 'baru-mulai') }}"
+                                            class="mt-3 btn btn-master btn-secondary w-100">
+                                            Start With This Plan
+                                        </a>
+                                    </p>
+                                @endauth
+                                @guest
+                                    <p>
+                                        <a href="{{ route('login') }}" class="mt-3 btn btn-master btn-secondary w-100">
+                                            Start With This Plan
+                                        </a>
+                                    </p>
+                                @endguest
                             </div>
                         </div>
                     </div>

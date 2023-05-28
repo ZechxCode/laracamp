@@ -6,14 +6,14 @@
                 <div class="col-lg-12 col-12">
                     <img src="{{ asset('images/ill_register.png') }}" height="400" class="mb-5" alt=" ">
                 </div>
-                <div class="mt-4  col-lg-12 col-12 header-wrap">
+                <div class="mt-4 col-lg-12 col-12 header-wrap">
                     <p class="story">
                         WHAT A DAY!
                     </p>
                     <h2 class="primary-header ">
                         Berhasil Checkout
                     </h2>
-                    <a href="#" class="mt-3 btn btn-primary">
+                    <a href="{{ route('dashboard') }}" class="mt-3 btn btn-primary">
                         My Dashboard
                     </a>
                 </div>
