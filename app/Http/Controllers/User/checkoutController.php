@@ -24,11 +24,16 @@ class checkoutController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Camp $camp)
+    public function create(Request $request, Camp $camp)
     {
         // pada tahap ini slug sudah di seleksi oleh db model Camp
         // sehingga data yang di parsing seudah sesuai dengan db camps
         // return $camp;
+        // isRegistered didapat dari Model Camp
+        if ($camp->isRegistered) {
+            $request->session()->flash('error', "You Already Registered on {$camp->title} camp.");
+            return redirect(route('dashboard'));
+        }
 
         $user = Auth::user();
         return view('checkout.create', [
