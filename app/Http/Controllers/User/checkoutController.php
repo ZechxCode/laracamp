@@ -7,6 +7,7 @@ use App\Models\Checkout;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\User\Checkout\Store;
 
 class checkoutController extends Controller
 {
@@ -48,10 +49,10 @@ class checkoutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Camp $camp)
+    public function store(Store $request, Camp $camp)
     {
         // return $camp;
-        // return $request->all();
+        return $request->all();
 
         //mapping request data
         $data = $request->all();
