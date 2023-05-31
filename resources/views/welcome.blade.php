@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (session('messageAfterRegister'))
+        <div class="text-center alert alert-success">
+            {{ session('messageAfterRegister') }}
+        </div>
+    @endif
+
     <section class="banner">
         <div class="container">
             <div class="row justify-content-center">

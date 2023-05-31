@@ -6,7 +6,9 @@ use App\Models\Camp;
 use App\Models\Checkout;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\Checkout\AfterCheckout;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\User\Checkout\Store;
 
 class checkoutController extends Controller
@@ -52,7 +54,7 @@ class checkoutController extends Controller
     public function store(Store $request, Camp $camp)
     {
         // return $camp;
-        return $request->all();
+        // return $request->all();
 
         //mapping request data
         $data = $request->all();
@@ -69,8 +71,9 @@ class checkoutController extends Controller
 
 
         //create checkout
-        Checkout::create($data);
+        $checkout = Checkout::create($data);
 
+        Mail::to(Auth::user()->email)->send(new AfterCheckout($checkout));
 
         return redirect(route('checkout.success'));
     }
