@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\User\Checkout\Store;
 
-class checkoutController extends Controller
+class CheckoutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,7 +35,7 @@ class checkoutController extends Controller
         // isRegistered didapat dari Model Camp
         if ($camp->isRegistered) {
             $request->session()->flash('error', "You Already Registered on {$camp->title} camp.");
-            return redirect(route('dashboard'));
+            return redirect(route('user.dashboard'));
         }
 
         $user = Auth::user();
