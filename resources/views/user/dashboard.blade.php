@@ -40,11 +40,11 @@
                                     <strong>$280,000</strong>
                                 </td>
                                 <td>
-                                    @if ($checkout->is_paid == 1)
+                                    @if ($checkout->payment_status == 'paid')
                                         <strong><span class="text-green">Payment Success</span></strong>
-                                    @elseif ($checkout->is_paid == 0)
+                                    @elseif ($checkout->payment_status == 'pending' || 'waiting')
                                         <strong>Waiting for Payment</strong>
-                                    @elseif ($checkout->is_paid > 1)
+                                    @elseif ($checkout->payment_status > 'failed' || 'failure' || 'cancel')
                                         <strong><span class="text-red ">Canceled</span></strong>
                                     @endif
                                 </td>

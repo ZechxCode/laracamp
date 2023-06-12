@@ -37,8 +37,8 @@ Route::get('auth/google/callback', [UserController::class, 'handleProviderCallba
 // 'auth/google/callback' harus sama dengan yang kita daftarin di env-redirect
 
 //Midtrans Routes
-Route::get('payment/success', [UserController::class, 'midtransCallback']);
-Route::post('payment/success', [UserController::class, 'midtransCallback']);
+Route::get('payment/success', [CheckoutController::class, 'midtransCallback']);
+Route::post('payment/success', [CheckoutController::class, 'midtransCallback']);
 
 
 
