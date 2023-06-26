@@ -40,12 +40,20 @@
                                     <strong>$280,000</strong>
                                 </td>
                                 <td>
-                                    @if ($checkout->is_paid == 1)
+                                    @if ($checkout->payment_status == 'paid')
                                         <strong><span class="text-green">Payment Success</span></strong>
-                                    @elseif ($checkout->is_paid == 0)
-                                        <strong>Waiting for Payment</strong>
-                                    @elseif ($checkout->is_paid > 1)
-                                        <strong><span class="text-red ">Canceled</span></strong>
+                                    @elseif ($checkout->payment_status == 'pending' || $checkout->payment_status == 'waiting')
+                                        <strong><span class="text-secondary">{{ $checkout->payment_status }}</span></strong>
+                                    @elseif (
+                                        $checkout->payment_status == 'failed' ||
+                                            $checkout->payment_status == 'failure' ||
+                                            $checkout->payment_status == 'cancel')
+                                        <strong><span class="text-red ">{{ $checkout->payment_status }}</span></strong>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($checkout->payment_status == 'pending' || $checkout->payment_status == 'waiting')
+                                        <a href="{{ $checkout->midtrans_url }}" class="btn btn-primary">Pay Here</a>
                                     @endif
                                 </td>
                                 <td>
@@ -58,7 +66,7 @@
                         @empty
                             <tr>
                                 <td colspan="5">
-                                    <h3>No Data</h3>
+                                    <h3>No Camp Registered</h3>
                                 </td>
                             </tr>
                         @endforelse
