@@ -24,14 +24,15 @@ class Store extends FormRequest
      */
     public function rules()
     {
+        $strings = 'required|string';
         $expiredValidation = date('Y-m', time());
         return [
-            'name' => 'required|string',
+            'name' => $strings,
             'email' => 'required|email|unique:users,email,' . Auth::id() . ',id',
-            'occupation' => 'required|string',
-            'card_number' => 'required|numeric|digits_between:8,16',
-            'expired' => 'required|date|date_format:Y-m|after_or_equal:today' . $expiredValidation,
-            'cvc' => 'required|numeric|digits:3',
+            'occupation' => $strings,
+            'phone' => $strings,
+            'address' => $strings,
+
 
         ];
     }
