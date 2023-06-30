@@ -79,7 +79,7 @@
                                     </div>
 
 
-                                    <button type="submit" class="w-100 btn btn-primary">Pay Now</button>
+                                    <button type="submit" class="w-100 btn btn-primary">Checkout</button>
                                     <p class="mt-4 text-center subheader">
                                         <img src="{{ asset('images/ic_secure.svg') }}" alt=""> Your payment is
                                         secure

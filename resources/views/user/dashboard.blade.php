@@ -53,7 +53,8 @@
                                 </td>
                                 <td>
                                     @if ($checkout->payment_status == 'pending' || $checkout->payment_status == 'waiting')
-                                        <a href="{{ $checkout->midtrans_url }}" class="btn btn-primary">Pay Here</a>
+                                        <a href="{{ $checkout->midtrans_url }}" target="_blank" class="btn btn-primary">Pay
+                                            Here</a>
                                     @endif
                                 </td>
                                 <td>
