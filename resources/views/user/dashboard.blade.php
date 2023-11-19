@@ -37,7 +37,13 @@
 
                                 </td>
                                 <td>
-                                    <strong>$280,000</strong>
+                                    <strong>
+                                        {{-- @money({{ $checkout->total }}, 'IDR') --}}
+                                        Rp{{ number_format($checkout->total, 0) }}
+                                        @if ($checkout->discount_id)
+                                            <span class="badge bg-success">Disc {{ $checkout->discount_percentage }}%</span>
+                                        @endif
+                                    </strong>
                                 </td>
                                 <td>
                                     @if ($checkout->payment_status == 'paid')
